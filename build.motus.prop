@@ -1,0 +1,11 @@
+ro.product.model=MB300
+ro.product.brand=motorola
+ro.product.name=motus_att_us
+ro.product.device=motus
+ro.product.board=motus
+ro.product.manufacturer=motorola
+ro.product.locale.language=en
+ro.product.locale.region=US
+ro.board.platform=
+# ro.build.product is obsolete; use ro.product.device
+ro.build.product=motus

@@ -1,0 +1,220 @@
+# Copyright (C) 2008 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+on early-init
+    device mtd@misc 0460 radio diag
+
+# Set timeout value for rmnet stats.
+    write /sys/devices/virtual/net/rmnet0/timeout_suspend 5000000
+    write /sys/devices/virtual/net/rmnet0/timeout 18000000
+
+on boot
+# unmap left alt to avoid console switch
+    setkey 0x0 0x38 0x0
+# reset SEND+MENU+END
+    setkey 0x0 0xe7 0x706
+    setkey 0x0 0x8b 0x707
+
+    setkey 0x40 0xe7 0x706
+    setkey 0x40 0x8b 0x707
+
+    setkey 0x80 0xe7 0x706
+    setkey 0x80 0x8b 0x707
+
+    setkey 0xc0 0xe7 0x706
+    setkey 0xc0 0x8b 0x707
+    setkey 0xc0 0x6b 0x20c
+
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+
+    # bluetooth power up/down interface
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chmod 0660                /sys/class/rfkill/rfkill0/state
+    # old kernel method:
+    chown bluetooth bluetooth /sys/module/board_motus/parameters/bluetooth_power_on
+    chmod 0660 /sys/module/board_motus/parameters/bluetooth_power_on
+    chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
+    chown bluetooth bluetooth /proc/bluetooth/sleep/proto
+    chown system system /sys/module/sco/parameters/disable_esco
+    chmod 0660 /sys/module/bluetooth_power/parameters/power
+    chmod 0660 /proc/bluetooth/sleep/proto
+    chown bluetooth bluetooth /dev/ttyHS0
+    chmod 0660 /dev/ttyHS0
+    chmod 0666 /dev/msm_snd
+    #proximity
+    chown system system /sys/devices/platform/sfh7743.-2/proximity
+    #radio
+    chown root radio /proc/cmdline
+    chown radio system /sys/android_power/state
+    chown radio system /sys/android_power/request_state
+    chown radio system /sys/android_power/acquire_full_wake_lock
+    chown radio system /sys/android_power/acquire_partial_wake_lock
+    chown radio system /sys/android_power/release_wake_lock
+    chown radio system /sys/power/state
+    chown radio system /sys/power/wake_lock
+    chown radio system /sys/power/wake_unlock
+    chmod 0660 /sys/power/state
+    chmod 0660 /sys/power/wake_lock
+    chmod 0660 /sys/power/wake_unlock
+
+# Vibrator
+    chown system system /sys/class/vibrator/vibrator/enable
+
+# Broadcom stuff
+    mkdir /data/misc/wifi 0770 system wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+    chown bluetooth bluetooth /sys/module/board_motus/parameters/bluetooth_power_on
+    chmod 0660 /sys/module/board_motus/parameters/bluetooth_power_on
+
+# 12m
+    mkdir /data/local/12m 0775 system system
+    mkdir /data/local/12m/batch 0775 system system
+    mkdir /data/local/12m/batch/log 0775 system system
+
+#  E-compass
+    chown system system /dev/akm8973_aot
+    chown system system /dev/akm8973_dev
+
+# Accelerometer
+    chown system system /sys/class/i2c-adapter/i2c-0/0-0018/mode
+    chmod 0664 /sys/class/i2c-adapter/i2c-0/0-0018/mode
+    chown system system /dev/accelerometer
+    chmod 0664 /dev/accelerometer
+
+# touchscreen
+    chown system system /dev/touchpad
+    chmod 0666 /dev/touchpad
+
+# minipad
+    chown system system /dev/minipad
+    chmod 0666 /dev/minipad
+
+# Camera LED brightness attributes accessible to all
+    chmod 0666 /sys/class/leds/flashlight/brightness
+    chmod 0666 /sys/class/leds/cam-torch/brightness
+
+# Permissions changes needed for TCMD
+    chown system system /dev/blan_enable
+    chmod 0660 /dev/blan_enable
+    chown system system /dev/misc_helper
+    chmod 0660 /dev/misc_helper
+    chown system graphics /dev/graphics/fb0
+    chmod 0660 /dev/graphics/fb0
+    chmod 0644 /dev/block/mmcblk0p1
+
+# Permissions needed for port_bridge
+    chown root system /dev/ttyHSUSB0
+    chmod 0660 /dev/ttyHSUSB0
+
+# Set WiFi interface name
+    setprop wifi.interface eth0
+
+    chown system system /dev/als
+    chmod 0664 /dev/als
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/module/sco/parameters/disable_esco
+    chown system system /sys/kernel/ipv4/tcp_wmem_min
+    chown system system /sys/kernel/ipv4/tcp_wmem_def
+    chown system system /sys/kernel/ipv4/tcp_wmem_max
+    chown system system /sys/kernel/ipv4/tcp_rmem_min
+    chown system system /sys/kernel/ipv4/tcp_rmem_def
+    chown system system /sys/kernel/ipv4/tcp_rmem_max
+
+
+    # cpufreq configurations
+#    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 245760
+#    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor ondemand
+#    write /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate 40000
+#    write /sys/devices/system/cpu/cpufreq/ondemand/up_threshold 85
+
+    write /sys/module/lowmemorykiller/parameters/minfree 1536,2048,4096,9216,10240,10240
+
+# compass/accelerometer daemon
+service akmd2 /system/bin/akmd2
+    user compass
+    group compass misc input
+
+## TCMD
+service tcmd /system/bin/tcmd_engine usb0
+#    user system - this makes reboot failing
+#    group system inet
+    socket local_tcmd stream 0660 system system
+
+service port_bridge /system/bin/port_bridge /dev/smd0 /dev/ttyHSUSB0
+        user radio
+        group system
+
+service fuel_gauge /system/bin/fuel_gauge --all
+    oneshot
+
+service qmuxd /system/bin/qmuxd
+    oneshot
+
+service wlan_loader /system/bin/wlan_loader \
+    -f /system/etc/wifi/sdio-g-cdc-reclaim-wme.bin -e /proc/calibration
+    disabled
+    oneshot
+
+service wpa_supplicant /system/bin/wpa_supplicant \
+    -Deth0 -ieth0 -c/data/misc/wifi/wpa_supplicant.conf -q
+#   we will start as root and wpa_supplicant will switch to user wifi
+#   after setting up the capabilities required for WEXT
+#   user wifi
+#   group wifi inet keystore
+    socket wpa_eth0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd /system/bin/dhcpcd -ABKL
+    disabled
+    oneshot
+
+#bluetooth 
+service hciattach /system/bin/hciattach \
+    -n -s 115200 /dev/ttyHS0 texasalt 4000000 flow
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+
+# touchpad service
+service touchpad /system/bin/touchpad \
+    -a /data/touchpad.log
+    oneshot
+
+# bugreport is triggered by the KEY_LEFTSHIFT and KEY_MENU keycodes
+service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
+    disabled
+    oneshot
+    keycodes 42 139
+
+# bp panic sensor  (why isn't this running?)
+service bppsensor /system/bin/mknod -c /dev/bppsensor bppsensor
+    oneshot
+
+# Modemlog
+service modemlog /system/bin/modemlog
+    class TOOL
+    user system
+    oneshot
+
+service minipadut /system/bin/minipadut -a
+    class HW
+    oneshot
+
+
