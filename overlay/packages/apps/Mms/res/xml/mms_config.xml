@@ -32,7 +32,7 @@
     <int name="maxImageWidth">1024</int>
 
     <!-- UAProf URL -->
-    <string name="uaProfUrl">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
+    <string name="uaProfUrl">http://uaprof.motorola.com/phoneconfig/MotoMB200/profile/MotoMB200.rdf</string>
 
     <string name="userAgent">Android-Mms/2.0</string>
 

@@ -23,6 +23,11 @@ unzip -j -o ../../../${DEVICE}_update.zip system/bin/akmd2 -d ../../../vendor/mo
 chmod 755 ../../../vendor/motorola/$DEVICE/proprietary/akmd2
 unzip -j -o ../../../${DEVICE}_update.zip system/bin/touchpad -d ../../../vendor/motorola/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/bin/minipadut -d ../../../vendor/motorola/$DEVICE/proprietary
+unzip -j -o ../../../${DEVICE}_update.zip system/bin/qmuxd -d ../../../vendor/motorola/$DEVICE/proprietary
+unzip -j -o ../../../${DEVICE}_update.zip system/bin/tcmd_engine -d ../../../vendor/motorola/$DEVICE/proprietary
+unzip -j -o ../../../${DEVICE}_update.zip system/bin/fuel_gauge -d ../../../vendor/motorola/$DEVICE/proprietary
+unzip -j -o ../../../${DEVICE}_update.zip system/bin/port_bridge -d ../../../vendor/motorola/$DEVICE/proprietary
+unzip -j -o ../../../${DEVICE}_update.zip system/bin/mknod -d ../../../vendor/motorola/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/etc/AudioFilter.csv -d ../../../vendor/motorola/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/etc/AudioPara4.csv -d ../../../vendor/motorola/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/etc/BCM4325D1_004.002.004.0218.0225f.hcd -d ../../../vendor/motorola/$DEVICE/proprietary
@@ -69,6 +74,11 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/akmd2:system/bin/akmd2 \\
     vendor/motorola/__DEVICE__/proprietary/touchpad:system/bin/touchpad \\
     vendor/motorola/__DEVICE__/proprietary/minipadut:system/bin/minipadut \\
+    vendor/motorola/__DEVICE__/proprietary/qmuxd:system/bin/qmuxd \\
+    vendor/motorola/__DEVICE__/proprietary/fuel_gauge:system/bin/fuel_gauge \\
+    vendor/motorola/__DEVICE__/proprietary/mknod:system/bin/mknod \\
+    vendor/motorola/__DEVICE__/proprietary/port_bridge:system/bin/port_bridge \\
+    vendor/motorola/__DEVICE__/proprietary/tcmd_engine:system/bin/tcmd_engine \\
     vendor/motorola/__DEVICE__/proprietary/AudioFilter.csv:system/etc/AudioFilter.csv \\
     vendor/motorola/__DEVICE__/proprietary/AudioPara4.csv:system/etc/AudioPara4.csv \\
     vendor/motorola/__DEVICE__/proprietary/BCM4325D1_004.002.004.0218.0225f.hcd:system/etc/BCM4325D1_004.002.004.0218.0225f.hcd \\
@@ -82,9 +92,9 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/libdss.so:system/lib/libdss.so \\
     vendor/motorola/__DEVICE__/proprietary/libmmgsdilib.so:system/lib/libmmgsdilib.so \\
     vendor/motorola/__DEVICE__/proprietary/libgsdi_exp.so:system/lib/libgsdi_exp.so \\
-    vendor/motorola/__DEVICE__/proprietary/libdgstk_exp.so:system/lib/libgstk_exp.so \\
+    vendor/motorola/__DEVICE__/proprietary/libgstk_exp.so:system/lib/libgstk_exp.so \\
     vendor/motorola/__DEVICE__/proprietary/libwms.so:system/lib/libwms.so \\
-    vendor/motorola/__DEVICE__/proprietary/libonrpc.so:system/lib/libonrpc.so \\
+    vendor/motorola/__DEVICE__/proprietary/liboncrpc.so:system/lib/libonrpc.so \\
     vendor/motorola/__DEVICE__/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \\
     vendor/motorola/__DEVICE__/proprietary/libmmcamera.so:system/lib/libmmcamera.so \\
     vendor/motorola/__DEVICE__/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \\

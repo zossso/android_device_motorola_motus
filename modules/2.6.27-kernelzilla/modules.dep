@@ -1,0 +1,86 @@
+kernel/arch/arm/mach-msm/reset_modem.ko:
+kernel/arch/arm/mach-msm/dma_test.ko:
+kernel/fs/exportfs/exportfs.ko:
+kernel/fs/nfsd/nfsd.ko: kernel/fs/exportfs/exportfs.ko
+kernel/fs/cifs/cifs.ko:
+kernel/fs/fuse/fuse.ko:
+kernel/crypto/md5.ko:
+kernel/crypto/cbc.ko:
+kernel/crypto/des_generic.ko:
+kernel/crypto/cast5.ko:
+kernel/crypto/deflate.ko: kernel/lib/zlib_deflate/zlib_deflate.ko kernel/lib/zlib_inflate/zlib_inflate.ko
+kernel/drivers/net/wireless/bcm4329/bcm4329.ko:
+kernel/drivers/input/evbug.ko:
+kernel/arch/arm/oprofile/oprofile.ko:
+kernel/net/netfilter/nfnetlink.ko:
+kernel/net/netfilter/nfnetlink_queue.ko: kernel/net/netfilter/nfnetlink.ko
+kernel/net/netfilter/nf_conntrack_proto_gre.ko:
+kernel/net/netfilter/nf_conntrack_ftp.ko:
+kernel/net/netfilter/nf_conntrack_h323.ko:
+kernel/net/netfilter/nf_conntrack_irc.ko:
+kernel/net/netfilter/nf_conntrack_netbios_ns.ko:
+kernel/net/netfilter/nf_conntrack_pptp.ko: kernel/net/netfilter/nf_conntrack_proto_gre.ko
+kernel/net/netfilter/nf_conntrack_sip.ko:
+kernel/net/netfilter/xt_CLASSIFY.ko:
+kernel/net/netfilter/xt_MARK.ko:
+kernel/net/netfilter/xt_NFLOG.ko:
+kernel/net/netfilter/xt_NFQUEUE.ko:
+kernel/net/netfilter/xt_RATEEST.ko:
+kernel/net/netfilter/xt_TCPMSS.ko:
+kernel/net/netfilter/xt_comment.ko:
+kernel/net/netfilter/xt_conntrack.ko:
+kernel/net/netfilter/xt_dccp.ko:
+kernel/net/netfilter/xt_dscp.ko:
+kernel/net/netfilter/xt_esp.ko:
+kernel/net/netfilter/xt_length.ko:
+kernel/net/netfilter/xt_limit.ko:
+kernel/net/netfilter/xt_mark.ko:
+kernel/net/netfilter/xt_owner.ko:
+kernel/net/netfilter/xt_pkttype.ko:
+kernel/net/netfilter/xt_state.ko:
+kernel/net/netfilter/xt_statistic.ko:
+kernel/net/netfilter/xt_tcpmss.ko:
+kernel/net/ipv4/netfilter/nf_nat_ftp.ko: kernel/net/netfilter/nf_conntrack_ftp.ko
+kernel/net/ipv4/netfilter/nf_nat_h323.ko: kernel/net/netfilter/nf_conntrack_h323.ko
+kernel/net/ipv4/netfilter/nf_nat_irc.ko: kernel/net/netfilter/nf_conntrack_irc.ko
+kernel/net/ipv4/netfilter/nf_nat_pptp.ko: kernel/net/netfilter/nf_conntrack_pptp.ko kernel/net/netfilter/nf_conntrack_proto_gre.ko kernel/net/ipv4/netfilter/nf_nat_proto_gre.ko
+kernel/net/ipv4/netfilter/nf_nat_sip.ko: kernel/net/netfilter/nf_conntrack_sip.ko
+kernel/net/ipv4/netfilter/nf_nat_proto_gre.ko:
+kernel/net/ipv4/netfilter/iptable_mangle.ko:
+kernel/net/ipv4/netfilter/ipt_addrtype.ko:
+kernel/net/ipv4/netfilter/ipt_ah.ko:
+kernel/net/ipv4/netfilter/ipt_ecn.ko:
+kernel/net/ipv4/netfilter/ipt_recent.ko:
+kernel/net/ipv4/netfilter/ipt_ECN.ko:
+kernel/net/ipv4/netfilter/ipt_REDIRECT.ko:
+kernel/net/ipv4/netfilter/arp_tables.ko:
+kernel/net/ipv4/netfilter/arptable_filter.ko: kernel/net/ipv4/netfilter/arp_tables.ko
+kernel/net/ipv4/ip_gre.ko:
+kernel/net/ipv4/ipcomp.ko: kernel/net/xfrm/xfrm_ipcomp.ko
+kernel/net/ipv4/xfrm4_tunnel.ko: kernel/net/ipv4/tunnel4.ko
+kernel/net/ipv4/tunnel4.ko:
+kernel/net/ipv4/xfrm4_mode_tunnel.ko:
+kernel/net/ipv4/tcp_bic.ko:
+kernel/net/ipv4/tcp_westwood.ko:
+kernel/net/ipv4/tcp_htcp.ko:
+kernel/net/xfrm/xfrm_ipcomp.ko:
+kernel/net/ipv6/netfilter/ip6_tables.ko:
+kernel/net/ipv6/netfilter/ip6table_filter.ko: kernel/net/ipv6/netfilter/ip6_tables.ko
+kernel/net/ipv6/netfilter/ip6table_mangle.ko: kernel/net/ipv6/netfilter/ip6_tables.ko kernel/net/ipv6/ipv6.ko
+kernel/net/ipv6/netfilter/nf_conntrack_ipv6.ko: kernel/net/ipv6/ipv6.ko
+kernel/net/ipv6/netfilter/ip6t_ah.ko: kernel/net/ipv6/netfilter/ip6_tables.ko
+kernel/net/ipv6/netfilter/ip6t_rt.ko: kernel/net/ipv6/netfilter/ip6_tables.ko
+kernel/net/ipv6/netfilter/ip6t_REJECT.ko: kernel/net/ipv6/ipv6.ko
+kernel/net/ipv6/ipv6.ko:
+kernel/net/ipv6/ipcomp6.ko: kernel/net/xfrm/xfrm_ipcomp.ko kernel/net/ipv6/xfrm6_tunnel.ko kernel/net/ipv6/tunnel6.ko kernel/net/ipv6/ipv6.ko
+kernel/net/ipv6/xfrm6_tunnel.ko: kernel/net/ipv6/tunnel6.ko kernel/net/ipv6/ipv6.ko
+kernel/net/ipv6/tunnel6.ko: kernel/net/ipv6/ipv6.ko
+kernel/net/ipv6/xfrm6_mode_transport.ko:
+kernel/net/ipv6/xfrm6_mode_tunnel.ko: kernel/net/ipv6/ipv6.ko
+kernel/net/ipv6/xfrm6_mode_beet.ko: kernel/net/ipv6/ipv6.ko
+kernel/net/ipv6/sit.ko: kernel/net/ipv4/tunnel4.ko kernel/net/ipv6/ipv6.ko
+kernel/net/sunrpc/auth_gss/auth_rpcgss.ko:
+kernel/net/sunrpc/auth_gss/rpcsec_gss_krb5.ko: kernel/net/sunrpc/auth_gss/auth_rpcgss.ko
+kernel/net/sunrpc/auth_gss/rpcsec_gss_spkm3.ko: kernel/net/sunrpc/auth_gss/auth_rpcgss.ko
+kernel/lib/zlib_inflate/zlib_inflate.ko:
+kernel/lib/zlib_deflate/zlib_deflate.ko:

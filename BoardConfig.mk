@@ -63,7 +63,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 #BOARD_EGL_CFG := device/motorola/motus/egl.cfg
 
 # Use libcamera2
-#BOARD_USES_OLD_CAMERA_HACK := true
+BOARD_USES_OLD_CAMERA_HACK := true
 
 # No authoring clock for OpenCore on Motus
 BOARD_NO_PV_AUTHORING_CLOCK := true

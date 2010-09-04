@@ -87,6 +87,7 @@ LOCAL_MODULE_PATH := $(TARGET_OUT)/lib/modules
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
+
 # the system properties for each device, loaded by init
 file := $(TARGET_OUT)/build.motus.prop
 ALL_PREBUILT += $(file)

@@ -23,6 +23,11 @@ adb pull /system/bin/akmd2 ../../../vendor/motorola/$DEVICE/proprietary/
 chmod 755 ../../../vendor/motorola/$DEVICE/proprietary/akmd2
 adb pull /system/bin/touchpad ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/bin/minipadut ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/bin/qmuxd ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/bin/fuel_gauge ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/bin/mknod ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/bin/port_bridge ../../../vendor/motorola/$DEVICE/proprietary/
+adb pull /system/bin/tcmd_engine ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/etc/AudioFilter.csv ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/etc/AudioPara4.csv ../../../vendor/motorola/$DEVICE/proprietary/
 adb pull /system/etc/BCM4325D1_004.002.004.0218.0225f.hcd ../../../vendor/motorola/$DEVICE/proprietary/
@@ -67,6 +72,11 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/akmd2:system/bin/akmd2 \\
     vendor/motorola/__DEVICE__/proprietary/touchpad:system/bin/touchpad \\
     vendor/motorola/__DEVICE__/proprietary/minipadut:system/bin/minipadut \\
+    vendor/motorola/__DEVICE__/proprietary/qmuxd:system/bin/qmuxd \\
+    vendor/motorola/__DEVICE__/proprietary/fuel_gauge:system/bin/fuel_gauge \\
+    vendor/motorola/__DEVICE__/proprietary/mknod:system/bin/mknod \\
+    vendor/motorola/__DEVICE__/proprietary/port_bridge:system/bin/port_bridge \\
+    vendor/motorola/__DEVICE__/proprietary/tcmd_engine:system/bin/tcmd_engine \\
     vendor/motorola/__DEVICE__/proprietary/AudioFilter.csv:system/etc/AudioFilter.csv \\
     vendor/motorola/__DEVICE__/proprietary/AudioPara4.csv:system/etc/AudioPara4.csv \\
     vendor/motorola/__DEVICE__/proprietary/BCM4325D1_004.002.004.0218.0225f.hcd:system/etc/BCM4325D1_004.002.004.0218.0225f.hcd \\
@@ -82,7 +92,7 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/libgsdi_exp.so:system/lib/libgsdi_exp.so \\
     vendor/motorola/__DEVICE__/proprietary/libdgstk_exp.so:system/lib/libgstk_exp.so \\
     vendor/motorola/__DEVICE__/proprietary/libwms.so:system/lib/libwms.so \\
-    vendor/motorola/__DEVICE__/proprietary/libonrpc.so:system/lib/libonrpc.so \\
+    vendor/motorola/__DEVICE__/proprietary/liboncrpc.so:system/lib/libonrpc.so \\
     vendor/motorola/__DEVICE__/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \\
     vendor/motorola/__DEVICE__/proprietary/libmmcamera.so:system/lib/libmmcamera.so \\
     vendor/motorola/__DEVICE__/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \\

@@ -80,6 +80,37 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+PRODUCT_COPY_FILES += \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/drivers/net/wireless/bcm4329/bcm4329.ko:system/lib/modules/bcm4329.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.seriomap:system/lib/modules/2.6.27-kernelzilla/modules.seriomap \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.alias:system/lib/modules/2.6.27-kernelzilla/modules.alias \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/drivers/net/wireless/bcm4329/bcm4329.ko:system/lib/modules/2.6.27-kernelzilla/kernel/drivers/net/wireless/bcm4329/bcm4329.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/net/sunrpc/auth_gss/rpcsec_gss_krb5.ko:system/lib/modules/2.6.27-kernelzilla/kernel/net/sunrpc/auth_gss/rpcsec_gss_krb5.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/net/sunrpc/auth_gss/auth_rpcgss.ko:system/lib/modules/2.6.27-kernelzilla/kernel/net/sunrpc/auth_gss/auth_rpcgss.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/net/ipv6/xfrm6_mode_beet.ko:system/lib/modules/2.6.27-kernelzilla/kernel/net/ipv6/xfrm6_mode_beet.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/net/ipv6/ipcomp6.ko:system/lib/modules/2.6.27-kernelzilla/kernel/net/ipv6/ipcomp6.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/net/ipv6/xfrm6_mode_tunnel.ko:system/lib/modules/2.6.27-kernelzilla/kernel/net/ipv6/xfrm6_mode_tunnel.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/net/ipv6/xfrm6_tunnel.ko:system/lib/modules/2.6.27-kernelzilla/kernel/net/ipv6/xfrm6_tunnel.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/net/ipv6/sit.ko:system/lib/modules/2.6.27-kernelzilla/kernel/net/ipv6/sit.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/net/ipv6/xfrm6_mode_transport.ko:system/lib/modules/2.6.27-kernelzilla/kernel/net/ipv6/xfrm6_mode_transport.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/net/ipv6/tunnel6.ko:system/lib/modules/2.6.27-kernelzilla/kernel/net/ipv6/tunnel6.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/net/ipv6/ipv6.ko:system/lib/modules/2.6.27-kernelzilla/kernel/net/ipv6/ipv6.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/fs/fuse/fuse.ko:system/lib/modules/2.6.27-kernelzilla/kernel/fs/fuse/fuse.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/kernel/fs/cifs/cifs.ko:system/lib/modules/2.6.27-kernelzilla/kernel/fs/cifs/cifs.ko \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.order:system/lib/modules/2.6.27-kernelzilla/modules.order \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.ofmap:system/lib/modules/2.6.27-kernelzilla/modules.ofmap \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.alias.bin:system/lib/modules/2.6.27-kernelzilla/modules.alias.bin \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.ccwmap:system/lib/modules/2.6.27-kernelzilla/modules.ccwmap \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.usbmap:system/lib/modules/2.6.27-kernelzilla/modules.usbmap \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.isapnpmap:system/lib/modules/2.6.27-kernelzilla/modules.isapnpmap \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.symbols:system/lib/modules/2.6.27-kernelzilla/modules.symbols \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.dep.bin:system/lib/modules/2.6.27-kernelzilla/modules.dep.bin \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.dep:system/lib/modules/2.6.27-kernelzilla/modules.dep \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.symbols.bin:system/lib/modules/2.6.27-kernelzilla/modules.symbols.bin \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.pcimap:system/lib/modules/2.6.27-kernelzilla/modules.pcimap \
+    device/motorola/motus/modules/2.6.27-kernelzilla/modules.inputmap:system/lib/modules/2.6.27-kernelzilla/modules.inputmap
+
+
 ## (2) Also get non-open-source aspects if available
 $(call inherit-product-if-exists, vendor/motorola/motus/motus-vendor.mk)
 
