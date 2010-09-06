@@ -39,7 +39,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.media.dec.jpeg.memcap=10000000
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/lib/libril.so \
+    rild.libpath=/system/lib/libhtc_ril.so \
     wifi.interface=eth0
 
 # Time between scans in seconds. Keep it high to minimize battery drain.
@@ -71,10 +71,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     device/motorola/motus/media_profiles.xml:/system/etc/media_profiles.xml
 
+PRODUCT_COPY_FILES += \
+    device/motorola/motus/dhd.ko:system/lib/modules/dhd.ko
+
+# The kernel
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/motorola/motus/kernel
+LOCAL_KERNEL := device/motorola/motus/kernel
 else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 PRODUCT_COPY_FILES += \
@@ -109,7 +113,6 @@ PRODUCT_COPY_FILES += \
     device/motorola/motus/modules/2.6.27-kernelzilla/modules.symbols.bin:system/lib/modules/2.6.27-kernelzilla/modules.symbols.bin \
     device/motorola/motus/modules/2.6.27-kernelzilla/modules.pcimap:system/lib/modules/2.6.27-kernelzilla/modules.pcimap \
     device/motorola/motus/modules/2.6.27-kernelzilla/modules.inputmap:system/lib/modules/2.6.27-kernelzilla/modules.inputmap
-
 
 ## (2) Also get non-open-source aspects if available
 $(call inherit-product-if-exists, vendor/motorola/motus/motus-vendor.mk)

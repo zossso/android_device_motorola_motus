@@ -66,6 +66,7 @@ ALL_PREBUILT += $(file)
 $(file) : $(LOCAL_PATH)/init.motus.rc | $(ACP)
 	$(transform-prebuilt-to-target)
 
+ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
 
 # from AndroidBoardCommon.mk
 file := $(TARGET_OUT_KEYLAYOUT)/headset.kl
@@ -78,15 +79,6 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE := vold.fstab
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := dhd.ko
-LOCAL_MODULE_TAGS := user
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT)/lib/modules
-LOCAL_SRC_FILES := $(LOCAL_MODULE)
-include $(BUILD_PREBUILT)
-
 
 # the system properties for each device, loaded by init
 file := $(TARGET_OUT)/build.motus.prop

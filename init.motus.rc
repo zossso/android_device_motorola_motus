@@ -109,13 +109,24 @@ on boot
     chmod 0666 /sys/class/leds/flashlight/brightness
     chmod 0666 /sys/class/leds/cam-torch/brightness
 
+# Old fast dormancy settings (needed for CDMA)
+     setprop ro.ril.fast.dormancy.rule 1
+     setprop ro.ril.fast.dormancy.timeout 2
+
+# Fast dormancy settings
+     setprop ro.ril.fd.scron.timeout 3
+     setprop ro.ril.fd.scroff.timeout 4
+
+# Wakelock debug
+     write /sys/module/wakelock/parameters/debug_mask 7
+
 # Permissions changes needed for TCMD
-#    chown system system /dev/blan_enable
-#    chmod 0660 /dev/blan_enable
-#    chown system system /dev/misc_helper
-#    chmod 0660 /dev/misc_helper
-#    chown system graphics /dev/graphics/fb0
-#    chmod 0660 /dev/graphics/fb0
+    chown system system /dev/blan_enable
+    chmod 0660 /dev/blan_enable
+    chown system system /dev/misc_helper
+    chmod 0660 /dev/misc_helper
+    chown system graphics /dev/graphics/fb0
+    chmod 0660 /dev/graphics/fb0
 #    chmod 0644 /dev/block/mmcblk0p1
 
 # Permissions needed for port_bridge
@@ -125,8 +136,8 @@ on boot
 # Set WiFi interface name
     setprop wifi.interface eth0
 
-#    chown system system /dev/als
-#    chmod 0664 /dev/als
+    chown system system /dev/als
+    chmod 0664 /dev/als
     chown system system /sys/class/timed_output/vibrator/enable
     chown system system /sys/module/sco/parameters/disable_esco
     chown system system /sys/kernel/ipv4/tcp_wmem_min
@@ -146,7 +157,7 @@ on boot
     write /sys/module/lowmemorykiller/parameters/minfree 1536,2048,4096,9216,10240,10240
 
 # compass/accelerometer daemon
-service akmd2 /system/bin/akmd2
+service akmd /system/bin/akmd2
     user compass
     group compass misc input
 
@@ -172,7 +183,7 @@ service wlan_loader /system/bin/wlan_loader \
     oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant \
-    -Deth0 -ieth0 -c/data/misc/wifi/wpa_supplicant.conf -q
+    -Deth0 -ieth0 -c/system/etc/wifi/wpa_supplicant.conf -q
 #   we will start as root and wpa_supplicant will switch to user wifi
 #   after setting up the capabilities required for WEXT
 #   user wifi

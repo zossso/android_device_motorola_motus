@@ -32,13 +32,12 @@ TARGET_NO_BOOTLOADER := true
 
 
 # Wifi related defines
-#BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
-#BOARD_WPA_SUPPLICANT_PRIVATE_LIB := libWifiApi
-#BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/sta_dk_4_0_4_32
+BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+WPA_SUPPLICANT_VERSION      := VER_0_6_X
+BOARD_WLAN_DEVICE           := bcm4329
 WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/dhd.ko"
-WIFI_DRIVER_MODULE_ARG      := ""
-WIFI_DRIVER_MODULE_NAME     := "wlan"
-WIFI_FIRMWARE_LOADER        := "wlan_loader"
+#WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
+WIFI_DRIVER_MODULE_NAME     := "bcm4329"
 
 TARGET_BOOTLOADER_LIBS := \
 	libboot_board_motus \

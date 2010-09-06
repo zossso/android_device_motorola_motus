@@ -37,6 +37,7 @@ unzip -j -o ../../../${DEVICE}_update.zip system/lib/libril-qc-1.so -d ../../../
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libqmi.so -d ../../../vendor/motorola/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libnv.so -d ../../../vendor/motorola/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libwmsts.so -d ../../../vendor/motorola/$DEVICE/proprietary
+unzip -j -o ../../../${DEVICE}_update.zip system/lib/libcm.so -d ../../../vendor/motorola/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libmmgsdilib.so -d ../../../vendor/motorola/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libgsdi_exp.so -d ../../../vendor/motorola/$DEVICE/proprietary
 unzip -j -o ../../../${DEVICE}_update.zip system/lib/libdss.so -d ../../../vendor/motorola/$DEVICE/proprietary
@@ -89,12 +90,13 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/libqmi.so:system/lib/libqmi.so \\
     vendor/motorola/__DEVICE__/proprietary/libnv.so:system/lib/libnv.so \\
     vendor/motorola/__DEVICE__/proprietary/libwmsts.so:system/lib/libwmsts.so \\
+    vendor/motorola/__DEVICE__/proprietary/libcm.so:system/lib/libcm.so \\
     vendor/motorola/__DEVICE__/proprietary/libdss.so:system/lib/libdss.so \\
     vendor/motorola/__DEVICE__/proprietary/libmmgsdilib.so:system/lib/libmmgsdilib.so \\
     vendor/motorola/__DEVICE__/proprietary/libgsdi_exp.so:system/lib/libgsdi_exp.so \\
     vendor/motorola/__DEVICE__/proprietary/libgstk_exp.so:system/lib/libgstk_exp.so \\
     vendor/motorola/__DEVICE__/proprietary/libwms.so:system/lib/libwms.so \\
-    vendor/motorola/__DEVICE__/proprietary/liboncrpc.so:system/lib/libonrpc.so \\
+    vendor/motorola/__DEVICE__/proprietary/liboncrpc.so:system/lib/liboncrpc.so \\
     vendor/motorola/__DEVICE__/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \\
     vendor/motorola/__DEVICE__/proprietary/libmmcamera.so:system/lib/libmmcamera.so \\
     vendor/motorola/__DEVICE__/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \\
